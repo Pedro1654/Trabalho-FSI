@@ -1,9 +1,7 @@
 from asyncio.windows_events import NULL
 from bs4 import BeautifulSoup
 import requests
-import os
 import re
-import time
 from tkinter import *
 from tkinter import messagebox
 
@@ -53,18 +51,18 @@ def getInput () :
          valor_dolar = 0
          valorParaD = float(valor_real) / float(valor.replace(',', '.'))
          valorParaD = round(valorParaD, 2)
-         messagebox.showinfo("Valor do convertido", f"{valor_real} BRL quivale a {valorParaD} USD após conversão.\n\n1 BRL = {float(valor.replace(',', '.'))} USD")
+         messagebox.showinfo("Valor do convertido", f"{valor_real} BRL quivale a {valorParaD} USD após conversão.\n\n1 USD = {float(valor.replace(',', '.'))} BRL")
     elif valor_real == '':
          valor_real = 0
          valorParaR = float(valor_dolar) * float(valor.replace(',', '.'))
          valorParaR = round(valorParaR, 2)
-         messagebox.showinfo("Valor do convertido", f"{valor_dolar} USD equivale a {float(valorParaR)} BRL após conversão.\n\n1 BRL = {float(valor.replace(',', '.'))} USD")
+         messagebox.showinfo("Valor do convertido", f"{valor_dolar} USD equivale a {float(valorParaR)} BRL após conversão.\n\n1 USD = {float(valor.replace(',', '.'))} BRL")
     elif valor_real and valor_dolar:
         valorParaD = float(valor_real) / float(valor.replace(',', '.'))
         valorParaD = round(valorParaD, 2)
         valorParaR = float(valor_dolar) * float(valor.replace(',', '.'))
         valorParaR = round(valorParaR, 2)
-        messagebox.showinfo("Valor do convertido", f"{valor_real} BRL quivale a {valorParaD} USD\n{valor_dolar} USD equivale a {valorParaR} BRL.\n\n1 BRL = {float(valor.replace(',', '.'))} USD")
+        messagebox.showinfo("Valor do convertido", f"{valor_real} BRL quivale a {valorParaD} USD\n{valor_dolar} USD equivale a {valorParaR} BRL.\n\n1 USD = {float(valor.replace(',', '.'))} BRL")
     return
 
 convert = Button(janela, text="Converter", command=getInput)
